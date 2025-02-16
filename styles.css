@@ -109,21 +109,22 @@ nav {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .menu-icon {
-        display: flex; /* Show hamburger icon on mobile */
+        display: flex;
     }
 
     .nav-links {
         position: fixed;
         top: 60px; /* Height of the menu bar */
         left: -100%; /* Hide menu off-screen */
-        width: 80%; /* Width of the slide-in menu */
+        width: 70%; /* Reduced width (70% of the screen) */
         height: 100vh; /* Full height */
-        background: var(--menu-background);
+        background: rgba(39, 42, 45, 0.95); /* Dark Gray with transparency */
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         padding-top: 20px;
         transition: left 0.3s ease;
+        backdrop-filter: blur(5px); /* Add a blur effect for modern look */
     }
 
     .nav-links.active {
