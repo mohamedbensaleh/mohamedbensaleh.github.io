@@ -9,6 +9,9 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
+// Theme Toggle Script
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 // Toggle Mobile Menu
 const menuIcon = document.getElementById('menu-icon');
 const navLinks = document.getElementById('nav-links');
