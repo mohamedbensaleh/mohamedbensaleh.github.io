@@ -44,11 +44,15 @@ html {
 nav {
     background: var(--menu-background);
     color: var(--menu-text);
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding */
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 60px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
@@ -87,8 +91,8 @@ nav ul li a:hover::after {
 
 /* Sections */
 section {
-    padding: 20px 20px; /* Reduced padding */
-    margin: 10px 0; /* Reduced margin */
+    padding: 20px 20px;
+    margin: 10px 0;
 }
 
 h1, h2, h3 {
@@ -105,7 +109,7 @@ h2 {
     font-size: 2em;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    display: inline-block; /* Ensure the line animation works */
+    display: inline-block;
 }
 
 h2::after {
@@ -140,7 +144,7 @@ ul {
 
 /* Home Section */
 #home {
-    padding: 20px 20px; /* Reduced padding */
+    padding: 20px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,7 +168,7 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    animation: scaleIn 1s ease forwards;
+    animation: scaleIn 2s ease forwards; /* Slower animation */
 }
 
 .profile-photo:hover {
@@ -178,8 +182,7 @@ ul {
 }
 
 .home-text {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 0.5s; /* Delay for the definition */
+    animation: fadeIn 2s ease forwards; /* Slower animation */
 }
 
 .buttons {
@@ -208,13 +211,13 @@ ul {
 }
 
 .hire-me:hover {
-    background: var(--hover-primary); /* Light Blue on hover */
+    background: var(--hover-primary);
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .download-cv:hover {
-    background: var(--hover-secondary); /* Bright Yellow on hover */
+    background: var(--hover-secondary);
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -236,10 +239,10 @@ footer p {
 
 /* Modern Theme Toggle Button */
 .theme-toggle {
-    position: absolute; /* Change from fixed to absolute */
-    top: 50%; /* Center vertically */
-    right: 20px; /* Position from the right */
-    transform: translateY(-50%); /* Adjust vertical alignment */
+    position: absolute;
+    top: 60%; /* Adjusted to move the button slightly down */
+    right: 20px;
+    transform: translateY(-50%);
     width: 50px;
     height: 26px;
     background: var(--button-primary);
