@@ -44,29 +44,46 @@ html {
 nav {
     background: var(--menu-background);
     color: var(--menu-text);
-    padding: 15px 0; /* Increased padding */
+    padding: 15px 0;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 60px; /* Fixed height */
+    height: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Add padding to the sides */
 }
 
-nav ul {
+/* Hamburger Icon */
+.menu-icon {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--menu-text);
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile Menu */
+.nav-links {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    display: inline;
+.nav-links li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: var(--menu-text);
     text-decoration: none;
     font-weight: bold;
@@ -74,7 +91,7 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a::after {
+.nav-links li a::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -85,8 +102,37 @@ nav ul li a::after {
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
+.nav-links li a:hover::after {
     width: 100%;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px; /* Height of the menu bar */
+        left: -100%; /* Hide menu off-screen */
+        width: 80%; /* Width of the slide-in menu */
+        height: 100vh; /* Full height */
+        background: var(--menu-background);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0; /* Slide menu in */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
 }
 
 /* Sections */
