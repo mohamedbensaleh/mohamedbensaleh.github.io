@@ -12,6 +12,20 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 // Theme Toggle Script
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
+// Toggle Mobile Menu
+const menuIcon = document.getElementById('menu-icon');
+const navLinks = document.getElementById('nav-links');
+
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close Menu When a Link is Clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
 
 // Check for saved theme in localStorage
 const savedTheme = localStorage.getItem('theme');
