@@ -9,15 +9,20 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// Theme Toggle Script
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
 // Toggle Mobile Menu
 const menuIcon = document.getElementById('menu-icon');
 const navLinks = document.getElementById('nav-links');
 
 menuIcon.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+});
+
+// Close Menu When Clicking Outside
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target) || menuIcon.contains(event.target);
+    if (!isClickInsideMenu && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+    }
 });
 
 // Close Menu When a Link is Clicked
